@@ -1,0 +1,17 @@
+[MAIN]
+py-version=3.11
+# Processa os .pth do venv (pywin32 registra win32/, win32/lib/ por eles).
+init-hook=import site; site.addsitedir(".venv/Lib/site-packages")
+# Módulos C do pywin32: sem fonte Python para o pylint inspecionar.
+extension-pkg-allow-list=win32event,win32service,servicemanager,win32serviceutil
+
+[MESSAGES CONTROL]
+# Protocols, dataclasses e objetos de estratégia têm poucos métodos públicos por desenho.
+disable=too-few-public-methods
+
+[FORMAT]
+max-line-length=120
+
+[BASIC]
+# Funções de até 5 linhas, autoexplicativas pelo nome e tipos, dispensam docstring.
+docstring-min-length=5

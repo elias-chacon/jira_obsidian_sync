@@ -1,0 +1,4 @@
+requests>=2.32,<3
+python-dotenv>=1.0,<2
+watchdog>=4,<7
+pywin32>=306; platform_system == "Windows"
